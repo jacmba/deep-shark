@@ -12,6 +12,9 @@ ModelImporter:
   - first:
       74: -7385016802479721606
     second: rig|Ta ta dance
+  - first:
+      74: 7046305900573086880
+    second: rig|Sitting
   externalObjects: {}
   materials:
     materialImportMode: 1
