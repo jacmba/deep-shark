@@ -36,9 +36,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Misc\Camchaser.cs" />
      <Compile Include="Assets\Scripts\Misc\Rotate.cs" />
+     <Compile Include="Assets\Scripts\Misc\SpriteStretcher.cs" />
      <Compile Include="Assets\Scripts\Misc\TextFlasher.cs" />
      <Compile Include="Assets\Scripts\Misc\TextStretcher.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerAdvance.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
      <None Include="Assets\Scripts\DeepSharkAssembly.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>/home/jacinto/Unity/Hub/Editor/2019.4.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
