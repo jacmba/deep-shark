@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: cb15081d81fdd63358724df37220c80a
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -1040010799182985663
+    second: Main frame|Controller.LAction
+  - first:
+      74: -1970040778510249456
+    second: Main frame|Controller.RAction
+  - first:
+      74: -8726431280471821615
+    second: Main frame|LightAction
+  - first:
+      74: 3249705226800001318
+    second: Main frame|Main frameAction
+  - first:
+      74: 6616100969701514089
+    second: Main frame|Prop baysAction
+  - first:
+      74: 5041232128687696569
+    second: Main frame|Propeller.LAction
+  - first:
+      74: -8101600914099026176
+    second: Main frame|Propeller.RAction
+  - first:
+      74: -2126118504368141446
+    second: Main frame|Running
+  - first:
+      74: 7935165543356724472
+    second: Main frame|Still
+  - first:
+      74: 7213240924522438489
+    second: Main frame|Still_final
+  - first:
+      74: -8106371945782779961
+    second: Prop bays|Controller.LAction
+  - first:
+      74: 4529024993708160335
+    second: Prop bays|Controller.RAction
+  - first:
+      74: -7963986233863362742
+    second: Prop bays|LightAction
+  - first:
+      74: 8670727488893345241
+    second: Prop bays|Main frameAction
+  - first:
+      74: -6074238110062516928
+    second: Prop bays|Prop baysAction
+  - first:
+      74: -8449874786132566281
+    second: Prop bays|Propeller.LAction
+  - first:
+      74: 9107999399119111830
+    second: Prop bays|Propeller.RAction
+  - first:
+      74: 1002779191256389002
+    second: Prop bays|Running
+  - first:
+      74: 141847550710112686
+    second: Prop bays|Still
+  - first:
+      74: -3643194018677808491
+    second: Prop bays|Still_final
+  - first:
+      74: 5277986782250288112
+    second: Controller.L|Controller.LAction
+  - first:
+      74: 1330127841488375690
+    second: Controller.L|Controller.RAction
+  - first:
+      74: 8065348278774040837
+    second: Controller.L|LightAction
+  - first:
+      74: -3481354524846740658
+    second: Controller.L|Main frameAction
+  - first:
+      74: 2696502183510957153
+    second: Controller.L|Prop baysAction
+  - first:
+      74: 1204704030712616301
+    second: Controller.L|Propeller.LAction
+  - first:
+      74: -8802167288570968173
+    second: Controller.L|Propeller.RAction
+  - first:
+      74: -4977624791228607022
+    second: Controller.L|Running
+  - first:
+      74: -2927627236317543295
+    second: Controller.L|Still
+  - first:
+      74: -1581566798361675068
+    second: Controller.L|Still_final
+  - first:
+      74: 7941814387756137039
+    second: Controller.R|Controller.LAction
+  - first:
+      74: -8567373332251686169
+    second: Controller.R|Controller.RAction
+  - first:
+      74: 7722255975040337006
+    second: Controller.R|LightAction
+  - first:
+      74: 193301470324644756
+    second: Controller.R|Main frameAction
+  - first:
+      74: -3193224860139898364
+    second: Controller.R|Prop baysAction
+  - first:
+      74: -7575146506634524484
+    second: Controller.R|Propeller.LAction
+  - first:
+      74: -770611871480126649
+    second: Controller.R|Propeller.RAction
+  - first:
+      74: 5749094104299151144
+    second: Controller.R|Running
+  - first:
+      74: 3601389662216015745
+    second: Controller.R|Still
+  - first:
+      74: -3321711575365409206
+    second: Controller.R|Still_final
+  - first:
+      74: -1577469527285374292
+    second: Light|Controller.LAction
+  - first:
+      74: -696990489617386210
+    second: Light|Controller.RAction
+  - first:
+      74: -7626363906017909467
+    second: Light|LightAction
+  - first:
+      74: 4344895581576503685
+    second: Light|Main frameAction
+  - first:
+      74: -1556139412552102235
+    second: Light|Prop baysAction
+  - first:
+      74: -6614532685060267110
+    second: Light|Propeller.LAction
+  - first:
+      74: 3932651689069801962
+    second: Light|Propeller.RAction
+  - first:
+      74: 6396372065630477814
+    second: Light|Running
+  - first:
+      74: 555386004192613178
+    second: Light|Still
+  - first:
+      74: 3639862787090033714
+    second: Light|Still_final
+  - first:
+      74: -6130103842835221508
+    second: Propeller.R|Controller.LAction
+  - first:
+      74: -4789852257043202766
+    second: Propeller.R|Controller.RAction
+  - first:
+      74: -4114180544727776542
+    second: Propeller.R|LightAction
+  - first:
+      74: 5570793323246817912
+    second: Propeller.R|Main frameAction
+  - first:
+      74: 7669357205799914213
+    second: Propeller.R|Prop baysAction
+  - first:
+      74: 3086893217567060481
+    second: Propeller.R|Propeller.LAction
+  - first:
+      74: -6925491729115131884
+    second: Propeller.R|Propeller.RAction
+  - first:
+      74: -4053907534915202806
+    second: Propeller.R|Running
+  - first:
+      74: -7363665968838553724
+    second: Propeller.R|Still
+  - first:
+      74: -264070061643641362
+    second: Propeller.R|Still_final
+  - first:
+      74: 407452062654022341
+    second: Propeller.L|Controller.LAction
+  - first:
+      74: -7111476039514637755
+    second: Propeller.L|Controller.RAction
+  - first:
+      74: 4137525148129682723
+    second: Propeller.L|LightAction
+  - first:
+      74: -4945092543462171526
+    second: Propeller.L|Main frameAction
+  - first:
+      74: 6283931058615989682
+    second: Propeller.L|Prop baysAction
+  - first:
+      74: -90375326318730763
+    second: Propeller.L|Propeller.LAction
+  - first:
+      74: 5633336819994865563
+    second: Propeller.L|Propeller.RAction
+  - first:
+      74: -6386440633731811630
+    second: Propeller.L|Running
+  - first:
+      74: -7805666444105165203
+    second: Propeller.L|Still
+  - first:
+      74: 4262208719266755643
+    second: Propeller.L|Still_final
+  - first:
+      74: 7465364738406921591
+    second: Cover|Controller.LAction
+  - first:
+      74: 8054180019439538392
+    second: Cover|Controller.RAction
+  - first:
+      74: -7263177710185842358
+    second: Cover|LightAction
+  - first:
+      74: -3726117013335050050
+    second: Cover|Main frameAction
+  - first:
+      74: -2056665451673821605
+    second: Cover|Prop baysAction
+  - first:
+      74: -7307944346330359977
+    second: Cover|Propeller.LAction
+  - first:
+      74: -2863521059959128160
+    second: Cover|Propeller.RAction
+  - first:
+      74: 1217461896373100399
+    second: Cover|Running
+  - first:
+      74: -3664946678420541810
+    second: Cover|Still
+  - first:
+      74: -7646337519151109412
+    second: Cover|Still_final
+  - first:
+      74: 6359101117419657197
+    second: Main frame|LightAction.001
+  - first:
+      74: 7519036995104610457
+    second: Prop bays|LightAction.001
+  - first:
+      74: -8698518292390941898
+    second: Controller.L|LightAction.001
+  - first:
+      74: 1097290682081368163
+    second: Controller.R|LightAction.001
+  - first:
+      74: -5554482905099465427
+    second: Light|LightAction.001
+  - first:
+      74: -2265699511649344330
+    second: Propeller.R|LightAction.001
+  - first:
+      74: 2735770474737907097
+    second: Propeller.L|LightAction.001
+  - first:
+      74: -7582277222933683529
+    second: Cover|LightAction.001
+  - first:
+      74: 544605763166609060
+    second: Light Glass|Controller.LAction
+  - first:
+      74: -5120926096383658033
+    second: Light Glass|Controller.RAction
+  - first:
+      74: 1450534985002626360
+    second: Light Glass|LightAction
+  - first:
+      74: -3283516145030891635
+    second: Light Glass|LightAction.001
+  - first:
+      74: -1271145039536625318
+    second: Light Glass|Main frameAction
+  - first:
+      74: -97796142560906977
+    second: Light Glass|Prop baysAction
+  - first:
+      74: 6302706184617323106
+    second: Light Glass|Propeller.LAction
+  - first:
+      74: -3089160289832034455
+    second: Light Glass|Propeller.RAction
+  - first:
+      74: 2861368265207944302
+    second: Light Glass|Running
+  - first:
+      74: -5154058515967578706
+    second: Light Glass|Still
+  - first:
+      74: 6916685594906064137
+    second: Light Glass|Still_final
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
