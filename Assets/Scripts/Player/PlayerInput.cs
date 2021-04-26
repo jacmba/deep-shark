@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
@@ -7,17 +8,18 @@ public class PlayerInput : MonoBehaviour
   [SerializeField]
   private float speed = 5f;
 
-  [SerializeField]
   private Transform aim;
-
   private float aimDist;
+  private bool canShoot;
 
   /// <summary>
   /// Start is called before the first frame update
   /// </summary>
   void Start()
   {
+    aim = Aim.instance;
     aimDist = aim.position.z - transform.position.z;
+    canShoot = true;
   }
 
   /// <summary>
@@ -32,6 +34,19 @@ public class PlayerInput : MonoBehaviour
     transform.Translate(translation, Space.World);
     transform.LookAt(aim.position, Vector3.down);
     transform.Rotate(Vector3.right * 90f);
+
+    if (Input.GetButton("Fire1"))
+    {
+      if (canShoot)
+      {
+        OnLaserShoot?.Invoke();
+        canShoot = false;
+      }
+    }
+    else
+    {
+      canShoot = true;
+    }
   }
 
   /// <summary>
@@ -53,4 +68,6 @@ public class PlayerInput : MonoBehaviour
       aim.position = new Vector3(lookPos.x, lookPos.y, transform.position.z + aimDist);
     }
   }
+
+  public static event Action OnLaserShoot;
 }
