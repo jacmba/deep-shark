@@ -15,10 +15,10 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.015070592, g: 0.009255962, b: 0.122641504, a: 0.4392157}
+  m_FogColor: {r: 0.004387094, g: 0.0021935485, b: 0.034, a: 0.4392157}
   m_FogMode: 1
   m_FogDensity: 0.1
-  m_LinearFogStart: 0
+  m_LinearFogStart: -75
   m_LinearFogEnd: 100
   m_AmbientSkyColor: {r: 0.80526876, g: 0.8147986, b: 0.8207547, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
@@ -262,8 +262,8 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 20
+  m_Intensity: 20
+  m_Range: 100
   m_SpotAngle: 75
   m_InnerSpotAngle: 7
   m_CookieSize: 10
@@ -635,6 +635,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cave
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4b7d6de18e4666b03ab15a99e8eb488c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7d6de18e4666b03ab15a99e8eb488c, type: 3}
 --- !u!1 &1168223375
@@ -765,7 +770,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9b5768f007e1f66e48fcd546aadee189, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -804,13 +809,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305634809}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.08715578, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 0, z: 10.03}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
 --- !u!114 &1305634812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,7 +869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c6a8b11deb65e0fbdd1ce46221b5b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.75
+  speed: 1.5
 --- !u!95 &1803754911
 Animator:
   serializedVersion: 3
@@ -895,8 +900,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.040182836, y: 0.02470606, z: -0.014}
-  m_Center: {x: 0, y: -7.057994e-11, z: 0.004}
+  m_Size: {x: 0.040182836, y: 0.02470606, z: 0.014}
+  m_Center: {x: 0, y: 7.057994e-11, z: 0.004}
 --- !u!114 &1803754913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,6 +914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e77a3653b8ca7229ef9bf031a132ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  aim: {fileID: 1305634811}
 --- !u!1001 &1883123724
 PrefabInstance:
   m_ObjectHideFlags: 0
