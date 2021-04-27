@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cannon : MonoBehaviour
 {
   private GameObject laserPrefab;
+  private AudioSource audioSrc;
 
   /// <summary>
   /// Start is called before the first frame update
@@ -12,6 +13,7 @@ public class Cannon : MonoBehaviour
   void Start()
   {
     laserPrefab = Resources.Load<GameObject>("Prefabs/Laser");
+    audioSrc = GetComponent<AudioSource>();
     PlayerInput.OnLaserShoot += OnLaserShoot;
   }
 
@@ -26,5 +28,6 @@ public class Cannon : MonoBehaviour
   void OnLaserShoot()
   {
     GameObject.Instantiate(laserPrefab, transform.position, transform.rotation);
+    audioSrc.Play();
   }
 }

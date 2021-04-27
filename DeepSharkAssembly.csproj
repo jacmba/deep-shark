@@ -41,10 +41,12 @@
      <Compile Include="Assets\Scripts\Misc\SpriteStretcher.cs" />
      <Compile Include="Assets\Scripts\Misc\TextFlasher.cs" />
      <Compile Include="Assets\Scripts\Misc\TextStretcher.cs" />
+     <Compile Include="Assets\Scripts\Misc\UIHeart.cs" />
      <Compile Include="Assets\Scripts\Player\Aim.cs" />
      <Compile Include="Assets\Scripts\Player\Cannon.cs" />
      <Compile Include="Assets\Scripts\Player\Laser.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerAdvance.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
      <None Include="Assets\Scripts\DeepSharkAssembly.asmdef" />
     <Reference Include="UnityEngine">
