@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,6 +57,12 @@ public class PlayerController : MonoBehaviour
       audioSource.Play();
       damageClock = 5f;
       lives--;
+
+      if (lives < 0)
+      {
+        SceneManager.LoadScene(2);
+      }
+
       transform.position = new Vector3(0, 0, transform.position.z);
       canDamage = false;
     }
