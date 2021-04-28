@@ -1,0 +1,116 @@
+name: Actions
+
+on:
+  push: { branches: [release/*] }
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  get_version:
+    name: Get release version
+    runs-on: ubuntu-18.04
+    outputs:
+      version: ${{ steps.get_version.outputs.substring }}
+    steps:
+      # Get release version from branch name
+      - name: Get release version
+        id: get_version
+        uses: bhowell2/github-substring-action@v1.0.0
+        with:
+          value: ${{ github.ref }}
+          index_of_str: "refs/heads/release/"
+
+  release:
+    name: Build ${{ github.ref }}
+    runs-on: ubuntu-18.04
+    needs: get_version
+    outputs:
+      url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      # Create changelog
+      - name: Create changelog
+        id: create_changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          onlyLastTag: true
+          stripHeaders: true
+
+      # Create release
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ needs.get_version.outputs.version }}
+          release_name: v${{ needs.get_version.outputs.version }}
+          draft: false
+          prerelease: false
+          body: ${{ steps.create_changelog.outputs.changelog }}
+
+  build:
+    name: Build ${{ matrix.targetPlatform }} with Unity ${{ matrix.unityVersion }}
+    runs-on: ubuntu-18.04
+    needs:
+      - get_version
+      - release
+    strategy:
+      fail-fast: false
+      matrix:
+        unityVersion:
+          - 2019.4.14f1
+        targetPlatform:
+          - StandaloneLinux64
+          - StandaloneWindows64
+          - StandaloneOSX
+          # - Android
+    steps:
+      # Checkout
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v1.1.0
+        with:
+          path: Library
+          key: Library
+
+      # Tests
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v1.3
+        with:
+          unityVersion: ${{ matrix.unityVersion }}
+          testMode: all
+
+      # Build
+      - name: Build project
+        uses: game-ci/unity-builder@v0.10
+        with:
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+          androidKeystoreName: ${{ secrets.KEYSTORE_NAME }}
+          androidKeystoreBase64: ${{ secrets.KEYSTORE_BASE64 }}
+          androidKeystorePass: ${{ secrets.KEYSTORE_PASS }}
+          androidKeyaliasName: ${{ secrets.KEYSTORE_ALIASNAME }}
+          androidKeyaliasPass: ${{ secrets.KEYSTORE_ALIASPASS }}
+
+      # Zip build folder
+      - name: Zip build folder
+        uses: papeloto/action-zip@v1
+        with:
+          files: build/${{ matrix.targetPlatform }}
+          dest: DeepSharkRescue-${{ needs.get_version.outputs.version }}-${{ matrix.targetPlatform }}.zip
+
+      # Publish release asset
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.release.outputs.url }}
+          asset_path: ./DeepSharkRescue-${{ needs.get_version.outputs.version }}-${{ matrix.targetPlatform }}.zip
+          asset_name: DeepSharkRescue-${{ needs.get_version.outputs.version }}-${{ matrix.targetPlatform }}.zip
+          asset_content_type: application/zip
