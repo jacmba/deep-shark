@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
   private AudioClip damageSound;
   private bool canDamage = false;
   private float damageClock = 3f;
+  private PlayerAdvance advance;
+  private Vector3 checkpoint;
+  private float checkpointClock = 10f;
 
   /// <summary>
   /// Start is called before the first frame update
@@ -21,6 +24,8 @@ public class PlayerController : MonoBehaviour
     damageSound = Resources.Load<AudioClip>("Sound/damage");
     stretcher = GetComponent<SpriteStretcher>();
     audioSource = GetComponent<AudioSource>();
+    advance = GetComponent<PlayerAdvance>();
+    checkpoint = transform.position;
   }
 
   /// <summary>
@@ -40,7 +45,15 @@ public class PlayerController : MonoBehaviour
       {
         damageClock = 3f;
         canDamage = true;
+        advance.Advance();
       }
+    }
+
+    checkpointClock -= Time.deltaTime;
+    if (checkpointClock <= 0)
+    {
+      checkpointClock = 10f;
+      checkpoint = transform.position;
     }
   }
 
@@ -53,6 +66,7 @@ public class PlayerController : MonoBehaviour
   {
     if (canDamage)
     {
+      advance.Stop();
       audioSource.clip = damageSound;
       audioSource.Play();
       damageClock = 5f;
@@ -63,7 +77,7 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(2);
       }
 
-      transform.position = new Vector3(0, 0, transform.position.z);
+      transform.position = new Vector3(0, checkpoint.y, transform.position.z);
       canDamage = false;
     }
   }
