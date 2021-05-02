@@ -1600,6 +1600,18 @@ CapsuleCollider:
   m_Height: 6.115308
   m_Direction: 1
   m_Center: {x: 0.044434786, y: 1.7027678, z: 0}
+--- !u!114 &1454951912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454951910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e9218e6d30b14d2be1557587de031b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1454951913
 Animator:
   serializedVersion: 3
