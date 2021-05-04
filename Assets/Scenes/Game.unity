@@ -1612,6 +1612,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e9218e6d30b14d2be1557587de031b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  swimSpeed: 5
+  stareDist: 30
+  attackDist: 10
 --- !u!95 &1454951913
 Animator:
   serializedVersion: 3
