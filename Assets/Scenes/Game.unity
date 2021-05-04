@@ -1613,9 +1613,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  swimSpeed: 5
-  stareDist: 30
-  attackDist: 10
+  health: 5
+  states:
+  - type: 1
+    speed: 5
+    angle: {x: 90, y: 0, z: 0}
+    rotSpeed: 15
+    minDist: 30
+  - type: 0
+    speed: 0
+    angle: {x: 0, y: 0, z: 0}
+    rotSpeed: 15
+    minDist: 10
+  - type: 2
+    speed: 30
+    angle: {x: -90, y: 0, z: 0}
+    rotSpeed: 15
+    minDist: 0
 --- !u!95 &1454951913
 Animator:
   serializedVersion: 3

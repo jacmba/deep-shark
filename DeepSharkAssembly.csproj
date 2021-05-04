@@ -38,6 +38,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyType.cs" />
+     <Compile Include="Assets\Scripts\Enemy\State.cs" />
+     <Compile Include="Assets\Scripts\Enemy\StateType.cs" />
      <Compile Include="Assets\Scripts\Misc\Camchaser.cs" />
      <Compile Include="Assets\Scripts\Misc\Rotate.cs" />
      <Compile Include="Assets\Scripts\Misc\SpriteStretcher.cs" />

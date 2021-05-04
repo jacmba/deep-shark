@@ -8,19 +8,18 @@ public class EnemyController : MonoBehaviour
   private EnemyType type;
 
   [SerializeField]
-  private float swimSpeed;
+  private int health = 5;
 
   [SerializeField]
-  private float stareDist;
-
-  [SerializeField]
-  private float attackDist;
+  private State[] states;
+  private int stateIndex;
 
   /// <summary>
   /// Start is called before the first frame update
   /// </summary>
   void Start()
   {
+    stateIndex = 0;
   }
 
   /// <summary>
