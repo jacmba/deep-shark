@@ -1617,18 +1617,18 @@ MonoBehaviour:
   states:
   - type: 1
     speed: 5
-    angle: {x: 90, y: 0, z: 0}
-    rotSpeed: 15
+    angle: {x: 270, y: 0, z: 0}
+    rotSpeed: 0.5
     minDist: 30
   - type: 0
     speed: 0
     angle: {x: 0, y: 0, z: 0}
-    rotSpeed: 15
+    rotSpeed: 0.5
     minDist: 10
   - type: 2
     speed: 30
-    angle: {x: -90, y: 0, z: 0}
-    rotSpeed: 15
+    angle: {x: 90, y: 0, z: 0}
+    rotSpeed: 0.5
     minDist: 0
 --- !u!95 &1454951913
 Animator:

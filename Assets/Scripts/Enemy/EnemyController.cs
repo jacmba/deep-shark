@@ -14,12 +14,18 @@ public class EnemyController : MonoBehaviour
   private State[] states;
   private int stateIndex;
 
+  private State currentState;
+
+  private Animator animator;
+
   /// <summary>
   /// Start is called before the first frame update
   /// </summary>
   void Start()
   {
     stateIndex = 0;
+    animator = GetComponent<Animator>();
+    SetState();
   }
 
   /// <summary>
@@ -27,5 +33,26 @@ public class EnemyController : MonoBehaviour
   /// </summary>
   void Update()
   {
+    if (currentState.angle != Vector3.zero && Magnitude(currentState.angle - transform.eulerAngles) > 1f)
+    {
+      Debug.Log(Magnitude(currentState.angle - transform.eulerAngles));
+      transform.Rotate(currentState.angle * currentState.rotSpeed * Time.deltaTime, Space.Self);
+    }
+
+    if (currentState.speed > 0f)
+    {
+      transform.Translate(Vector3.up * currentState.speed * Time.deltaTime, Space.Self);
+    }
+  }
+
+  void SetState()
+  {
+    currentState = states[stateIndex];
+    animator.SetInteger("State", (int)currentState.type);
+  }
+
+  float Magnitude(Vector3 v)
+  {
+    return Mathf.Abs(v.x + v.y + v.z);
   }
 }
