@@ -5,7 +5,7 @@ using UnityEngine;
 public class State
 {
   public StateType type;
-  public float speed;
+  public Vector3 velocity;
   public Vector3 angle;
   public float rotSpeed;
   public float minDist;

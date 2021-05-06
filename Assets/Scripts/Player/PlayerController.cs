@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
   public static int lives = 3;
 
+  public static PlayerController instance { get; private set; } = null;
+
   private SpriteStretcher stretcher;
   private AudioSource audioSource;
   private AudioClip damageSound;
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     audioSource = GetComponent<AudioSource>();
     advance = GetComponent<PlayerAdvance>();
     checkpoint = transform.position;
+    instance = this;
   }
 
   /// <summary>

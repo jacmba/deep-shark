@@ -13,10 +13,10 @@ public class EnemyController : MonoBehaviour
   [SerializeField]
   private State[] states;
   private int stateIndex;
-
   private State currentState;
-
   private Animator animator;
+  private Vector3 velocity;
+  private PlayerController player;
 
   /// <summary>
   /// Start is called before the first frame update
@@ -24,8 +24,10 @@ public class EnemyController : MonoBehaviour
   void Start()
   {
     stateIndex = 0;
+    velocity = Vector3.zero;
     animator = GetComponent<Animator>();
     SetState();
+    player = PlayerController.instance;
   }
 
   /// <summary>
@@ -33,15 +35,30 @@ public class EnemyController : MonoBehaviour
   /// </summary>
   void Update()
   {
-    if (currentState.angle != Vector3.zero && Magnitude(currentState.angle - transform.eulerAngles) > 1f)
+    if (player == null)
     {
-      Debug.Log(Magnitude(currentState.angle - transform.eulerAngles));
-      transform.Rotate(currentState.angle * currentState.rotSpeed * Time.deltaTime, Space.Self);
+      player = PlayerController.instance;
     }
 
-    if (currentState.speed > 0f)
+    if (currentState.angle != Vector3.zero)
     {
-      transform.Translate(Vector3.up * currentState.speed * Time.deltaTime, Space.Self);
+      Quaternion rot = Quaternion.Euler(currentState.angle);
+      transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * currentState.rotSpeed);
+    }
+
+    if (velocity.magnitude > 0f)
+    {
+      transform.Translate(velocity * Time.deltaTime, Space.World);
+      if (currentState.type == StateType.SWIM)
+      {
+        velocity = Vector3.Lerp(velocity, Vector3.zero, Time.deltaTime);
+      }
+    }
+
+    float dist = Mathf.Abs(transform.position.z - player.transform.position.z);
+    if (dist < currentState.minDist)
+    {
+      NextState();
     }
   }
 
@@ -49,10 +66,20 @@ public class EnemyController : MonoBehaviour
   {
     currentState = states[stateIndex];
     animator.SetInteger("State", (int)currentState.type);
+    Advance();
   }
 
-  float Magnitude(Vector3 v)
+  void NextState()
   {
-    return Mathf.Abs(v.x + v.y + v.z);
+    stateIndex++;
+    if (stateIndex < states.Length)
+    {
+      SetState();
+    }
+  }
+
+  void Advance()
+  {
+    velocity = currentState.velocity;
   }
 }
